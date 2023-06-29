@@ -1,6 +1,7 @@
 - name: Install Jenkins on web servers
   hosts: all 
   become: true 
+  os_family: amazon
   tasks:
     - name: install jenkins
       get_url: 
@@ -28,6 +29,7 @@
 - name: start and enable jenkins
   hosts: all
   become: true
+  os_family: amazon
   tasks:
     - name: enable jenkins
       service:
