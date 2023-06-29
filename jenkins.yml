@@ -1,6 +1,6 @@
 - name: Install Jenkins on web servers
   hosts: all 
-  beocme: true 
+  become: true 
   tasks:
     - name: install jenkins
       get_url: 
