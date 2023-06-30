@@ -1,7 +1,7 @@
 - name: Install Jenkins on web servers
   hosts: all 
   become: true 
-  os_family: amazon
+  remote_user: ec2-user
   tasks:
     - name: install jenkins
       get_url: 
@@ -29,7 +29,7 @@
 - name: start and enable jenkins
   hosts: all
   become: true
-  os_family: amazon
+  remote_user: ec2-user
   tasks:
     - name: enable jenkins
       service:
